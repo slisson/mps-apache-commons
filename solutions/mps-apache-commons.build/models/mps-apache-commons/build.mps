@@ -1,311 +1,230 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model modelUID="r:25d73da3-059c-464e-8c7d-e2854813a3fb(mps-apache-commons.build)">
-  <persistence version="8" />
-  <language namespace="798100da-4f0a-421a-b991-71f8c50ce5d2(jetbrains.mps.build)" />
-  <language namespace="0cf935df-4699-4e9c-a132-fa109541cba3(jetbrains.mps.build.mps)" />
-  <import index="ffeo" modelUID="r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)" version="-1" />
-  <import index="3ior" modelUID="r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)" version="2" implicit="yes" />
-  <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
-  <import index="kdzh" modelUID="r:0353b795-df17-4050-9687-ee47eeb7094f(jetbrains.mps.build.mps.structure)" version="3" implicit="yes" />
-  <root type="3ior.BuildProject" typeId="3ior.5617550519002745363" id="5042703165197860745" nodeInfo="ng">
-    <property name="name" nameId="tpck.1169194664001" value="mps-apache-commons" />
-    <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../../" />
-    <node role="plugins" roleId="3ior.6647099934206700656" type="3ior.BuildJavaPlugin" typeId="3ior.6647099934206700647" id="5042703165197860746" nodeInfo="ng" />
-    <node role="plugins" roleId="3ior.6647099934206700656" type="kdzh.BuildMPSPlugin" typeId="kdzh.868032131020265945" id="5042703165197860747" nodeInfo="ng" />
-    <node role="macros" roleId="3ior.5617550519002745378" type="3ior.BuildFolderMacro" typeId="3ior.7389400916848136194" id="5042703165197860748" nodeInfo="ng">
-      <property name="name" nameId="tpck.1169194664001" value="mps_home" />
+<model ref="r:25d73da3-059c-464e-8c7d-e2854813a3fb(mps-apache-commons.build)" concise="true">
+  <persistence version="9" />
+  <languages>
+    <use id="798100da-4f0a-421a-b991-71f8c50ce5d2" name="jetbrains.mps.build" version="-1" />
+    <use id="0cf935df-4699-4e9c-a132-fa109541cba3" name="jetbrains.mps.build.mps" version="-1" />
+  </languages>
+  <imports>
+    <import index="ffeo" ref="r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)" />
+    <import index="3ior" ref="r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)" implicit="true" />
+    <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
+    <import index="kdzh" ref="r:0353b795-df17-4050-9687-ee47eeb7094f(jetbrains.mps.build.mps.structure)" implicit="true" />
+  </imports>
+  <registry>
+    <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
+      <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
+        <property id="1169194664001" name="name" index="TrG5h" />
+      </concept>
+    </language>
+    <language id="798100da-4f0a-421a-b991-71f8c50ce5d2" name="jetbrains.mps.build">
+      <concept id="7389400916848050060" name="jetbrains.mps.build.structure.BuildLayout_NamedContainer" flags="ng" index="3981dR">
+        <child id="4380385936562148502" name="containerName" index="Nbhlr" />
+      </concept>
+      <concept id="841011766566059607" name="jetbrains.mps.build.structure.BuildStringNotEmpty" flags="ng" index="3_J27D" />
+      <concept id="4903714810883702019" name="jetbrains.mps.build.structure.BuildTextStringPart" flags="ng" index="3Mxwew">
+        <property id="4903714810883755350" name="text" index="3MwjfP" />
+      </concept>
+      <concept id="4380385936562003279" name="jetbrains.mps.build.structure.BuildString" flags="ng" index="NbPM2">
+        <child id="4903714810883783243" name="parts" index="3MwsjC" />
+      </concept>
+      <concept id="6647099934206700647" name="jetbrains.mps.build.structure.BuildJavaPlugin" flags="ng" index="10PD9b" />
+      <concept id="5617550519002745364" name="jetbrains.mps.build.structure.BuildLayout" flags="ng" index="1l3spV" />
+      <concept id="5617550519002745363" name="jetbrains.mps.build.structure.BuildProject" flags="ng" index="1l3spW">
+        <property id="5204048710541015587" name="internalBaseDirectory" index="2DA0ip" />
+        <child id="7389400916848080626" name="parts" index="3989C9" />
+        <child id="6647099934206700656" name="plugins" index="10PD9s" />
+        <child id="5617550519002745381" name="dependencies" index="1l3spa" />
+        <child id="5617550519002745378" name="macros" index="1l3spd" />
+        <child id="5617550519002745372" name="layout" index="1l3spN" />
+      </concept>
+      <concept id="4701820937132344003" name="jetbrains.mps.build.structure.BuildLayout_Container" flags="ng" index="1y1bJS">
+        <child id="7389400916848037006" name="children" index="39821P" />
+      </concept>
+      <concept id="9126048691955220717" name="jetbrains.mps.build.structure.BuildLayout_File" flags="ng" index="28jJK3">
+        <child id="9126048691955220762" name="path" index="28jJRO" />
+      </concept>
+      <concept id="4993211115183325728" name="jetbrains.mps.build.structure.BuildProjectDependency" flags="ng" index="2sgV4H">
+        <reference id="5617550519002745380" name="script" index="1l3spb" />
+        <child id="4129895186893471026" name="artifacts" index="2JcizS" />
+      </concept>
+      <concept id="8618885170173601777" name="jetbrains.mps.build.structure.BuildCompositePath" flags="nn" index="2Ry0Ak">
+        <property id="8618885170173601779" name="head" index="2Ry0Am" />
+        <child id="8618885170173601778" name="tail" index="2Ry0An" />
+      </concept>
+      <concept id="7389400916848050071" name="jetbrains.mps.build.structure.BuildLayout_Zip" flags="ng" index="3981dG" />
+      <concept id="7389400916848036984" name="jetbrains.mps.build.structure.BuildLayout_Folder" flags="ng" index="398223" />
+      <concept id="7389400916848136194" name="jetbrains.mps.build.structure.BuildFolderMacro" flags="ng" index="398rNT" />
+      <concept id="7389400916848153117" name="jetbrains.mps.build.structure.BuildSourceMacroRelativePath" flags="ng" index="398BVA">
+        <reference id="7389400916848153130" name="macro" index="398BVh" />
+      </concept>
+      <concept id="5481553824944787378" name="jetbrains.mps.build.structure.BuildSourceProjectRelativePath" flags="ng" index="55IIr" />
+      <concept id="7321017245476976379" name="jetbrains.mps.build.structure.BuildRelativePath" flags="ng" index="iG8Mu">
+        <child id="7321017245477039051" name="compositePart" index="iGT6I" />
+      </concept>
+    </language>
+    <language id="0cf935df-4699-4e9c-a132-fa109541cba3" name="jetbrains.mps.build.mps">
+      <concept id="1500819558095907805" name="jetbrains.mps.build.mps.structure.BuildMps_Group" flags="ng" index="2G$12M">
+        <child id="1500819558095907806" name="modules" index="2G$12L" />
+      </concept>
+      <concept id="868032131020265945" name="jetbrains.mps.build.mps.structure.BuildMPSPlugin" flags="ng" index="3b7kt6" />
+      <concept id="322010710375871467" name="jetbrains.mps.build.mps.structure.BuildMps_AbstractModule" flags="ng" index="3LEN3z">
+        <property id="322010710375892619" name="uuid" index="3LESm3" />
+        <property id="8369506495128725901" name="compact" index="BnDLt" />
+        <child id="322010710375956261" name="path" index="3LF7KH" />
+      </concept>
+      <concept id="6592112598314586625" name="jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginGroup" flags="ng" index="m$f5U">
+        <reference id="6592112598314586626" name="group" index="m$f5T" />
+      </concept>
+      <concept id="6592112598314498932" name="jetbrains.mps.build.mps.structure.BuildMps_IdeaPlugin" flags="ng" index="m$_wf">
+        <property id="6592112598314498927" name="id" index="m$_wk" />
+        <child id="6592112598314498931" name="version" index="m$_w8" />
+        <child id="6592112598314499050" name="content" index="m$_yh" />
+        <child id="6592112598314499028" name="dependencies" index="m$_yJ" />
+        <child id="6592112598314499021" name="name" index="m$_yQ" />
+        <child id="6592112598314855574" name="containerName" index="m_cZH" />
+      </concept>
+      <concept id="6592112598314498926" name="jetbrains.mps.build.mps.structure.BuildMpsLayout_Plugin" flags="ng" index="m$_wl">
+        <reference id="6592112598314801433" name="plugin" index="m_rDy" />
+      </concept>
+      <concept id="6592112598314499027" name="jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginDependency" flags="ng" index="m$_yC">
+        <reference id="6592112598314499066" name="target" index="m$_y1" />
+      </concept>
+      <concept id="4278635856200826393" name="jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyJar" flags="ng" index="1BurEX">
+        <child id="4278635856200826394" name="path" index="1BurEY" />
+      </concept>
+      <concept id="3189788309731840247" name="jetbrains.mps.build.mps.structure.BuildMps_Solution" flags="ng" index="1E1JtA" />
+      <concept id="7259033139236285166" name="jetbrains.mps.build.mps.structure.BuildMps_ExtractedModuleDependency" flags="nn" index="1SiIV0">
+        <child id="7259033139236285167" name="dependency" index="1SiIV1" />
+      </concept>
+      <concept id="5253498789149381388" name="jetbrains.mps.build.mps.structure.BuildMps_Module" flags="ng" index="3bQrTs">
+        <property id="1500819558096356884" name="doNotCompile" index="2GAjPV" />
+        <child id="5253498789149547704" name="dependencies" index="3bR37C" />
+      </concept>
+      <concept id="5253498789149585690" name="jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyOnModule" flags="ng" index="3bR9La">
+        <property id="5253498789149547713" name="reexport" index="3bR36h" />
+        <reference id="5253498789149547705" name="module" index="3bR37D" />
+      </concept>
+    </language>
+  </registry>
+  <node concept="1l3spW" id="4nVhWYPmNY9">
+    <property role="TrG5h" value="mps-apache-commons" />
+    <property role="2DA0ip" value="../../" />
+    <node concept="10PD9b" id="4nVhWYPmNYa" role="10PD9s" />
+    <node concept="3b7kt6" id="4nVhWYPmNYb" role="10PD9s" />
+    <node concept="398rNT" id="4nVhWYPmNYc" role="1l3spd">
+      <property role="TrG5h" value="mps_home" />
     </node>
-    <node role="dependencies" roleId="3ior.5617550519002745381" type="3ior.BuildProjectDependency" typeId="3ior.4993211115183325728" id="5042703165197860749" nodeInfo="ng">
-      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="ffeo.4301118715654192646" resolveInfo="mps" />
-      <node role="artifacts" roleId="3ior.4129895186893471026" type="3ior.BuildSourceMacroRelativePath" typeId="3ior.7389400916848153117" id="5042703165197860750" nodeInfo="ng">
-        <link role="macro" roleId="3ior.7389400916848153130" targetNodeId="5042703165197860748" resolveInfo="mps_home" />
-      </node>
-    </node>
-    <node role="layout" roleId="3ior.5617550519002745372" type="3ior.BuildLayout" typeId="3ior.5617550519002745364" id="5042703165197860772" nodeInfo="ng">
-      <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_Zip" typeId="3ior.7389400916848050071" id="5042703165197860773" nodeInfo="ng">
-        <node role="containerName" roleId="3ior.4380385936562148502" type="3ior.BuildStringNotEmpty" typeId="3ior.841011766566059607" id="5042703165197860774" nodeInfo="ng">
-          <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildTextStringPart" typeId="3ior.4903714810883702019" id="5042703165197860775" nodeInfo="ng">
-            <property name="text" nameId="3ior.4903714810883755350" value="mps-plugin-org.apache.commons.zip" />
-          </node>
-        </node>
-        <node role="children" roleId="3ior.7389400916848037006" type="kdzh.BuildMpsLayout_Plugin" typeId="kdzh.6592112598314498926" id="5042703165197860776" nodeInfo="ng">
-          <link role="plugin" roleId="kdzh.6592112598314801433" targetNodeId="5042703165197860763" />
-          <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_Folder" typeId="3ior.7389400916848036984" id="5042703165197861417" nodeInfo="ng">
-            <node role="containerName" roleId="3ior.4380385936562148502" type="3ior.BuildStringNotEmpty" typeId="3ior.841011766566059607" id="5042703165197861418" nodeInfo="ng">
-              <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildTextStringPart" typeId="3ior.4903714810883702019" id="5042703165197861421" nodeInfo="ng">
-                <property name="text" nameId="3ior.4903714810883755350" value="lib" />
-              </node>
-            </node>
-            <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_File" typeId="3ior.9126048691955220717" id="5042703165198606769" nodeInfo="ng">
-              <node role="path" roleId="3ior.9126048691955220762" type="3ior.BuildSourceProjectRelativePath" typeId="3ior.5481553824944787378" id="5042703165198606770" nodeInfo="ng">
-                <node role="compositePart" roleId="3ior.7321017245477039051" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="5042703165198606858" nodeInfo="nn">
-                  <property name="head" nameId="3ior.8618885170173601779" value="solutions" />
-                  <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="5042703165198606860" nodeInfo="nn">
-                    <property name="head" nameId="3ior.8618885170173601779" value="org.apache.commons" />
-                    <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="5042703165198606862" nodeInfo="nn">
-                      <property name="head" nameId="3ior.8618885170173601779" value="lib" />
-                      <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="5042703165198606864" nodeInfo="nn">
-                        <property name="head" nameId="3ior.8618885170173601779" value="commons-io-2.4" />
-                        <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="5042703165198606866" nodeInfo="nn">
-                          <property name="head" nameId="3ior.8618885170173601779" value="commons-io-2.4.jar" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_File" typeId="3ior.9126048691955220717" id="5042703165198606879" nodeInfo="ng">
-              <node role="path" roleId="3ior.9126048691955220762" type="3ior.BuildSourceProjectRelativePath" typeId="3ior.5481553824944787378" id="5042703165198606880" nodeInfo="ng">
-                <node role="compositePart" roleId="3ior.7321017245477039051" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="5042703165198606881" nodeInfo="nn">
-                  <property name="head" nameId="3ior.8618885170173601779" value="solutions" />
-                  <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="5042703165198606882" nodeInfo="nn">
-                    <property name="head" nameId="3ior.8618885170173601779" value="org.apache.commons" />
-                    <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="5042703165198606883" nodeInfo="nn">
-                      <property name="head" nameId="3ior.8618885170173601779" value="lib" />
-                      <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="5042703165198606884" nodeInfo="nn">
-                        <property name="head" nameId="3ior.8618885170173601779" value="commons-lang3-3.3.2" />
-                        <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="5042703165198607072" nodeInfo="nn">
-                          <property name="head" nameId="3ior.8618885170173601779" value="commons-lang3-3.3.2.jar" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_File" typeId="3ior.9126048691955220717" id="5042703165198606886" nodeInfo="ng">
-              <node role="path" roleId="3ior.9126048691955220762" type="3ior.BuildSourceProjectRelativePath" typeId="3ior.5481553824944787378" id="5042703165198606887" nodeInfo="ng">
-                <node role="compositePart" roleId="3ior.7321017245477039051" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="5042703165198606888" nodeInfo="nn">
-                  <property name="head" nameId="3ior.8618885170173601779" value="solutions" />
-                  <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="5042703165198606889" nodeInfo="nn">
-                    <property name="head" nameId="3ior.8618885170173601779" value="org.apache.commons" />
-                    <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="5042703165198606890" nodeInfo="nn">
-                      <property name="head" nameId="3ior.8618885170173601779" value="lib" />
-                      <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="5042703165198606891" nodeInfo="nn">
-                        <property name="head" nameId="3ior.8618885170173601779" value="commons-math3-3.3" />
-                        <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="5042703165198607245" nodeInfo="nn">
-                          <property name="head" nameId="3ior.8618885170173601779" value="commons-math3-3.3.jar" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_File" typeId="3ior.9126048691955220717" id="5042703165198606893" nodeInfo="ng">
-              <node role="path" roleId="3ior.9126048691955220762" type="3ior.BuildSourceProjectRelativePath" typeId="3ior.5481553824944787378" id="5042703165198606894" nodeInfo="ng">
-                <node role="compositePart" roleId="3ior.7321017245477039051" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="5042703165198606895" nodeInfo="nn">
-                  <property name="head" nameId="3ior.8618885170173601779" value="solutions" />
-                  <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="5042703165198606896" nodeInfo="nn">
-                    <property name="head" nameId="3ior.8618885170173601779" value="org.apache.commons" />
-                    <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="5042703165198606897" nodeInfo="nn">
-                      <property name="head" nameId="3ior.8618885170173601779" value="lib" />
-                      <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="5042703165198606898" nodeInfo="nn">
-                        <property name="head" nameId="3ior.8618885170173601779" value="commons-primitives-1.0" />
-                        <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="5042703165198607418" nodeInfo="nn">
-                          <property name="head" nameId="3ior.8618885170173601779" value="commons-primitives-1.0.jar" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_File" typeId="3ior.9126048691955220717" id="3937583844216115540" nodeInfo="ng">
-              <node role="path" roleId="3ior.9126048691955220762" type="3ior.BuildSourceProjectRelativePath" typeId="3ior.5481553824944787378" id="3937583844216115541" nodeInfo="ng">
-                <node role="compositePart" roleId="3ior.7321017245477039051" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="3937583844216115542" nodeInfo="nn">
-                  <property name="head" nameId="3ior.8618885170173601779" value="solutions" />
-                  <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="3937583844216115543" nodeInfo="nn">
-                    <property name="head" nameId="3ior.8618885170173601779" value="org.apache.commons" />
-                    <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="3937583844216115544" nodeInfo="nn">
-                      <property name="head" nameId="3ior.8618885170173601779" value="lib" />
-                      <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="3937583844216115545" nodeInfo="nn">
-                        <property name="head" nameId="3ior.8618885170173601779" value="commons-csv-1.0" />
-                        <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="3937583844216120584" nodeInfo="nn">
-                          <property name="head" nameId="3ior.8618885170173601779" value="commons-csv-1.0.jar" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
+    <node concept="2sgV4H" id="4nVhWYPmNYd" role="1l3spa">
+      <ref role="1l3spb" to="ffeo:3IKDaVZmzS6" resolve="mps" />
+      <node concept="398BVA" id="4nVhWYPmNYe" role="2JcizS">
+        <ref role="398BVh" node="4nVhWYPmNYc" resolve="mps_home" />
       </node>
     </node>
-    <node role="parts" roleId="3ior.7389400916848080626" type="kdzh.BuildMps_IdeaPlugin" typeId="kdzh.6592112598314498932" id="5042703165197860763" nodeInfo="ng">
-      <property name="id" nameId="kdzh.6592112598314498927" value="org.apache.commons" />
-      <node role="name" roleId="kdzh.6592112598314499021" type="3ior.BuildStringNotEmpty" typeId="3ior.841011766566059607" id="5042703165197860764" nodeInfo="ng">
-        <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildTextStringPart" typeId="3ior.4903714810883702019" id="5042703165197860765" nodeInfo="ng">
-          <property name="text" nameId="3ior.4903714810883755350" value="org.apache.commons" />
+    <node concept="1l3spV" id="4nVhWYPmNY$" role="1l3spN">
+      <node concept="3981dG" id="4nVhWYPmNY_" role="39821P">
+        <node concept="3_J27D" id="4nVhWYPmNYA" role="Nbhlr">
+          <node concept="3Mxwew" id="4nVhWYPmNYB" role="3MwsjC">
+            <property role="3MwjfP" value="mps-plugin-org.apache.commons.zip" />
+          </node>
         </node>
-      </node>
-      <node role="version" roleId="kdzh.6592112598314498931" type="3ior.BuildStringNotEmpty" typeId="3ior.841011766566059607" id="5042703165197860766" nodeInfo="ng">
-        <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildTextStringPart" typeId="3ior.4903714810883702019" id="5042703165197860767" nodeInfo="ng">
-          <property name="text" nameId="3ior.4903714810883755350" value="1.0" />
-        </node>
-      </node>
-      <node role="content" roleId="kdzh.6592112598314499050" type="kdzh.BuildMps_IdeaPluginGroup" typeId="kdzh.6592112598314586625" id="5042703165197860768" nodeInfo="ng">
-        <link role="group" roleId="kdzh.6592112598314586626" targetNodeId="5042703165197860762" resolveInfo="mps-apache-commons" />
-      </node>
-      <node role="dependencies" roleId="kdzh.6592112598314499028" type="kdzh.BuildMps_IdeaPluginDependency" typeId="kdzh.6592112598314499027" id="5042703165197860769" nodeInfo="ng">
-        <link role="target" roleId="kdzh.6592112598314499066" targetNodeId="ffeo.4973949960459588488" />
-      </node>
-      <node role="dependencies" roleId="kdzh.6592112598314499028" type="kdzh.BuildMps_IdeaPluginDependency" typeId="kdzh.6592112598314499027" id="5042703165197892196" nodeInfo="ng">
-        <link role="target" roleId="kdzh.6592112598314499066" targetNodeId="ffeo.6592112598314738250" />
-      </node>
-      <node role="containerName" roleId="kdzh.6592112598314855574" type="3ior.BuildStringNotEmpty" typeId="3ior.841011766566059607" id="5042703165197860770" nodeInfo="ng">
-        <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildTextStringPart" typeId="3ior.4903714810883702019" id="5042703165197860771" nodeInfo="ng">
-          <property name="text" nameId="3ior.4903714810883755350" value="org.apache.commons" />
-        </node>
-      </node>
-    </node>
-    <node role="parts" roleId="3ior.7389400916848080626" type="kdzh.BuildMps_Group" typeId="kdzh.1500819558095907805" id="5042703165197860762" nodeInfo="ng">
-      <property name="name" nameId="tpck.1169194664001" value="mps-apache-commons" />
-      <node role="modules" roleId="kdzh.1500819558095907806" type="kdzh.BuildMps_Solution" typeId="kdzh.3189788309731840247" id="5042703165197891522" nodeInfo="ng">
-        <property name="compact" nameId="kdzh.8369506495128725901" value="true" />
-        <property name="name" nameId="tpck.1169194664001" value="mps-apache-commons.build" />
-        <property name="uuid" nameId="kdzh.322010710375892619" value="9d8ad609-a15a-4817-b9ae-ec9cbb0c2c49" />
-        <property name="doNotCompile" nameId="kdzh.1500819558096356884" value="false" />
-        <node role="path" roleId="kdzh.322010710375956261" type="3ior.BuildSourceProjectRelativePath" typeId="3ior.5481553824944787378" id="5042703165197891525" nodeInfo="ng">
-          <node role="compositePart" roleId="3ior.7321017245477039051" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="5042703165197891617" nodeInfo="nn">
-            <property name="head" nameId="3ior.8618885170173601779" value="solutions" />
-            <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="5042703165197891755" nodeInfo="nn">
-              <property name="head" nameId="3ior.8618885170173601779" value="mps-apache-commons.build" />
-              <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="5042703165197891825" nodeInfo="nn">
-                <property name="head" nameId="3ior.8618885170173601779" value="mps-apache-commons.build.msd" />
+        <node concept="m$_wl" id="4nVhWYPmNYC" role="39821P">
+          <ref role="m_rDy" node="4nVhWYPmNYr" resolve="org.apache.commons" />
+          <node concept="398223" id="4nVhWYPmO8D" role="39821P">
+            <node concept="3_J27D" id="4nVhWYPmO8E" role="Nbhlr">
+              <node concept="3Mxwew" id="4nVhWYPmO8H" role="3MwsjC">
+                <property role="3MwjfP" value="lib" />
               </node>
             </node>
-          </node>
-        </node>
-        <node role="dependencies" roleId="kdzh.5253498789149547704" type="kdzh.BuildMps_ExtractedModuleDependency" typeId="kdzh.7259033139236285166" id="5042703165197891894" nodeInfo="nn">
-          <node role="dependency" roleId="kdzh.7259033139236285167" type="kdzh.BuildMps_ModuleDependencyOnModule" typeId="kdzh.5253498789149585690" id="5042703165197891895" nodeInfo="ng">
-            <property name="reexport" nameId="kdzh.5253498789149547713" value="false" />
-            <link role="module" roleId="kdzh.5253498789149547705" targetNodeId="ffeo.8227093612175570784" resolveInfo="jetbrains.mps.ide.build" />
-          </node>
-        </node>
-      </node>
-      <node role="modules" roleId="kdzh.1500819558095907806" type="kdzh.BuildMps_Solution" typeId="kdzh.3189788309731840247" id="5042703165197860761" nodeInfo="ng">
-        <property name="compact" nameId="kdzh.8369506495128725901" value="true" />
-        <property name="name" nameId="tpck.1169194664001" value="org.apache.commons" />
-        <property name="uuid" nameId="kdzh.322010710375892619" value="b0f8641f-bd77-4421-8425-30d9088a82f7" />
-        <property name="doNotCompile" nameId="kdzh.1500819558096356884" value="false" />
-        <node role="path" roleId="kdzh.322010710375956261" type="3ior.BuildSourceProjectRelativePath" typeId="3ior.5481553824944787378" id="5042703165197860756" nodeInfo="ng">
-          <node role="compositePart" roleId="3ior.7321017245477039051" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="5042703165197860757" nodeInfo="nn">
-            <property name="head" nameId="3ior.8618885170173601779" value="solutions" />
-            <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="5042703165197860758" nodeInfo="nn">
-              <property name="head" nameId="3ior.8618885170173601779" value="org.apache.commons" />
-              <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="5042703165197860759" nodeInfo="nn">
-                <property name="head" nameId="3ior.8618885170173601779" value="org.apache.commons.msd" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node role="dependencies" roleId="kdzh.5253498789149547704" type="kdzh.BuildMps_ExtractedModuleDependency" typeId="kdzh.7259033139236285166" id="5042703165197860791" nodeInfo="nn">
-          <node role="dependency" roleId="kdzh.7259033139236285167" type="kdzh.BuildMps_ModuleDependencyJar" typeId="kdzh.4278635856200826393" id="5042703165197860792" nodeInfo="ng">
-            <node role="path" roleId="kdzh.4278635856200826394" type="3ior.BuildSourceProjectRelativePath" typeId="3ior.5481553824944787378" id="5042703165197860785" nodeInfo="ng">
-              <node role="compositePart" roleId="3ior.7321017245477039051" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="5042703165197860786" nodeInfo="nn">
-                <property name="head" nameId="3ior.8618885170173601779" value="solutions" />
-                <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="5042703165197860787" nodeInfo="nn">
-                  <property name="head" nameId="3ior.8618885170173601779" value="org.apache.commons" />
-                  <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="5042703165197860788" nodeInfo="nn">
-                    <property name="head" nameId="3ior.8618885170173601779" value="lib" />
-                    <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="5042703165197860789" nodeInfo="nn">
-                      <property name="head" nameId="3ior.8618885170173601779" value="commons-io-2.4" />
-                      <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="5042703165197860790" nodeInfo="nn">
-                        <property name="head" nameId="3ior.8618885170173601779" value="commons-io-2.4.jar" />
+            <node concept="28jJK3" id="4nVhWYPpE6L" role="39821P">
+              <node concept="55IIr" id="4nVhWYPpE6M" role="28jJRO">
+                <node concept="2Ry0Ak" id="4nVhWYPpE8a" role="iGT6I">
+                  <property role="2Ry0Am" value="solutions" />
+                  <node concept="2Ry0Ak" id="4nVhWYPpE8c" role="2Ry0An">
+                    <property role="2Ry0Am" value="org.apache.commons" />
+                    <node concept="2Ry0Ak" id="4nVhWYPpE8e" role="2Ry0An">
+                      <property role="2Ry0Am" value="lib" />
+                      <node concept="2Ry0Ak" id="4nVhWYPpE8g" role="2Ry0An">
+                        <property role="2Ry0Am" value="commons-io-2.4" />
+                        <node concept="2Ry0Ak" id="4nVhWYPpE8i" role="2Ry0An">
+                          <property role="2Ry0Am" value="commons-io-2.4.jar" />
+                        </node>
                       </node>
                     </node>
                   </node>
                 </node>
               </node>
             </node>
-          </node>
-        </node>
-        <node role="dependencies" roleId="kdzh.5253498789149547704" type="kdzh.BuildMps_ExtractedModuleDependency" typeId="kdzh.7259033139236285166" id="5042703165197860799" nodeInfo="nn">
-          <node role="dependency" roleId="kdzh.7259033139236285167" type="kdzh.BuildMps_ModuleDependencyJar" typeId="kdzh.4278635856200826393" id="5042703165197860800" nodeInfo="ng">
-            <node role="path" roleId="kdzh.4278635856200826394" type="3ior.BuildSourceProjectRelativePath" typeId="3ior.5481553824944787378" id="5042703165197860793" nodeInfo="ng">
-              <node role="compositePart" roleId="3ior.7321017245477039051" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="5042703165197860794" nodeInfo="nn">
-                <property name="head" nameId="3ior.8618885170173601779" value="solutions" />
-                <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="5042703165197860795" nodeInfo="nn">
-                  <property name="head" nameId="3ior.8618885170173601779" value="org.apache.commons" />
-                  <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="5042703165197860796" nodeInfo="nn">
-                    <property name="head" nameId="3ior.8618885170173601779" value="lib" />
-                    <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="5042703165197860797" nodeInfo="nn">
-                      <property name="head" nameId="3ior.8618885170173601779" value="commons-lang3-3.3.2" />
-                      <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="5042703165197860798" nodeInfo="nn">
-                        <property name="head" nameId="3ior.8618885170173601779" value="commons-lang3-3.3.2.jar" />
+            <node concept="28jJK3" id="4nVhWYPpE8v" role="39821P">
+              <node concept="55IIr" id="4nVhWYPpE8w" role="28jJRO">
+                <node concept="2Ry0Ak" id="4nVhWYPpE8x" role="iGT6I">
+                  <property role="2Ry0Am" value="solutions" />
+                  <node concept="2Ry0Ak" id="4nVhWYPpE8y" role="2Ry0An">
+                    <property role="2Ry0Am" value="org.apache.commons" />
+                    <node concept="2Ry0Ak" id="4nVhWYPpE8z" role="2Ry0An">
+                      <property role="2Ry0Am" value="lib" />
+                      <node concept="2Ry0Ak" id="4nVhWYPpE8$" role="2Ry0An">
+                        <property role="2Ry0Am" value="commons-lang3-3.3.2" />
+                        <node concept="2Ry0Ak" id="4nVhWYPpEbw" role="2Ry0An">
+                          <property role="2Ry0Am" value="commons-lang3-3.3.2.jar" />
+                        </node>
                       </node>
                     </node>
                   </node>
                 </node>
               </node>
             </node>
-          </node>
-        </node>
-        <node role="dependencies" roleId="kdzh.5253498789149547704" type="kdzh.BuildMps_ExtractedModuleDependency" typeId="kdzh.7259033139236285166" id="5042703165197860807" nodeInfo="nn">
-          <node role="dependency" roleId="kdzh.7259033139236285167" type="kdzh.BuildMps_ModuleDependencyJar" typeId="kdzh.4278635856200826393" id="5042703165197860808" nodeInfo="ng">
-            <node role="path" roleId="kdzh.4278635856200826394" type="3ior.BuildSourceProjectRelativePath" typeId="3ior.5481553824944787378" id="5042703165197860801" nodeInfo="ng">
-              <node role="compositePart" roleId="3ior.7321017245477039051" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="5042703165197860802" nodeInfo="nn">
-                <property name="head" nameId="3ior.8618885170173601779" value="solutions" />
-                <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="5042703165197860803" nodeInfo="nn">
-                  <property name="head" nameId="3ior.8618885170173601779" value="org.apache.commons" />
-                  <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="5042703165197860804" nodeInfo="nn">
-                    <property name="head" nameId="3ior.8618885170173601779" value="lib" />
-                    <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="5042703165197860805" nodeInfo="nn">
-                      <property name="head" nameId="3ior.8618885170173601779" value="commons-math3-3.3" />
-                      <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="5042703165197860806" nodeInfo="nn">
-                        <property name="head" nameId="3ior.8618885170173601779" value="commons-math3-3.3.jar" />
+            <node concept="28jJK3" id="4nVhWYPpE8A" role="39821P">
+              <node concept="55IIr" id="4nVhWYPpE8B" role="28jJRO">
+                <node concept="2Ry0Ak" id="4nVhWYPpE8C" role="iGT6I">
+                  <property role="2Ry0Am" value="solutions" />
+                  <node concept="2Ry0Ak" id="4nVhWYPpE8D" role="2Ry0An">
+                    <property role="2Ry0Am" value="org.apache.commons" />
+                    <node concept="2Ry0Ak" id="4nVhWYPpE8E" role="2Ry0An">
+                      <property role="2Ry0Am" value="lib" />
+                      <node concept="2Ry0Ak" id="4nVhWYPpE8F" role="2Ry0An">
+                        <property role="2Ry0Am" value="commons-math3-3.3" />
+                        <node concept="2Ry0Ak" id="4nVhWYPpEed" role="2Ry0An">
+                          <property role="2Ry0Am" value="commons-math3-3.3.jar" />
+                        </node>
                       </node>
                     </node>
                   </node>
                 </node>
               </node>
             </node>
-          </node>
-        </node>
-        <node role="dependencies" roleId="kdzh.5253498789149547704" type="kdzh.BuildMps_ExtractedModuleDependency" typeId="kdzh.7259033139236285166" id="5042703165197860815" nodeInfo="nn">
-          <node role="dependency" roleId="kdzh.7259033139236285167" type="kdzh.BuildMps_ModuleDependencyJar" typeId="kdzh.4278635856200826393" id="5042703165197860816" nodeInfo="ng">
-            <node role="path" roleId="kdzh.4278635856200826394" type="3ior.BuildSourceProjectRelativePath" typeId="3ior.5481553824944787378" id="5042703165197860809" nodeInfo="ng">
-              <node role="compositePart" roleId="3ior.7321017245477039051" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="5042703165197860810" nodeInfo="nn">
-                <property name="head" nameId="3ior.8618885170173601779" value="solutions" />
-                <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="5042703165197860811" nodeInfo="nn">
-                  <property name="head" nameId="3ior.8618885170173601779" value="org.apache.commons" />
-                  <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="5042703165197860812" nodeInfo="nn">
-                    <property name="head" nameId="3ior.8618885170173601779" value="lib" />
-                    <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="5042703165197860813" nodeInfo="nn">
-                      <property name="head" nameId="3ior.8618885170173601779" value="commons-primitives-1.0" />
-                      <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="5042703165197860814" nodeInfo="nn">
-                        <property name="head" nameId="3ior.8618885170173601779" value="commons-primitives-1.0.jar" />
+            <node concept="28jJK3" id="4nVhWYPpE8H" role="39821P">
+              <node concept="55IIr" id="4nVhWYPpE8I" role="28jJRO">
+                <node concept="2Ry0Ak" id="4nVhWYPpE8J" role="iGT6I">
+                  <property role="2Ry0Am" value="solutions" />
+                  <node concept="2Ry0Ak" id="4nVhWYPpE8K" role="2Ry0An">
+                    <property role="2Ry0Am" value="org.apache.commons" />
+                    <node concept="2Ry0Ak" id="4nVhWYPpE8L" role="2Ry0An">
+                      <property role="2Ry0Am" value="lib" />
+                      <node concept="2Ry0Ak" id="4nVhWYPpE8M" role="2Ry0An">
+                        <property role="2Ry0Am" value="commons-primitives-1.0" />
+                        <node concept="2Ry0Ak" id="4nVhWYPpEgU" role="2Ry0An">
+                          <property role="2Ry0Am" value="commons-primitives-1.0.jar" />
+                        </node>
                       </node>
                     </node>
                   </node>
                 </node>
               </node>
             </node>
-          </node>
-        </node>
-        <node role="dependencies" roleId="kdzh.5253498789149547704" type="kdzh.BuildMps_ExtractedModuleDependency" typeId="kdzh.7259033139236285166" id="5042703165198607509" nodeInfo="nn">
-          <node role="dependency" roleId="kdzh.7259033139236285167" type="kdzh.BuildMps_ModuleDependencyOnModule" typeId="kdzh.5253498789149585690" id="5042703165198607510" nodeInfo="ng">
-            <property name="reexport" nameId="kdzh.5253498789149547713" value="false" />
-            <link role="module" roleId="kdzh.5253498789149547705" targetNodeId="ffeo.413682502717652307" resolveInfo="JDK" />
-          </node>
-        </node>
-        <node role="dependencies" roleId="kdzh.5253498789149547704" type="kdzh.BuildMps_ExtractedModuleDependency" typeId="kdzh.7259033139236285166" id="3937583844216115214" nodeInfo="nn">
-          <node role="dependency" roleId="kdzh.7259033139236285167" type="kdzh.BuildMps_ModuleDependencyJar" typeId="kdzh.4278635856200826393" id="3937583844216115215" nodeInfo="ng">
-            <node role="path" roleId="kdzh.4278635856200826394" type="3ior.BuildSourceProjectRelativePath" typeId="3ior.5481553824944787378" id="3937583844216115208" nodeInfo="ng">
-              <node role="compositePart" roleId="3ior.7321017245477039051" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="3937583844216115209" nodeInfo="nn">
-                <property name="head" nameId="3ior.8618885170173601779" value="solutions" />
-                <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="3937583844216115210" nodeInfo="nn">
-                  <property name="head" nameId="3ior.8618885170173601779" value="org.apache.commons" />
-                  <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="3937583844216115211" nodeInfo="nn">
-                    <property name="head" nameId="3ior.8618885170173601779" value="lib" />
-                    <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="3937583844216115212" nodeInfo="nn">
-                      <property name="head" nameId="3ior.8618885170173601779" value="commons-csv-1.0" />
-                      <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="3937583844216115213" nodeInfo="nn">
-                        <property name="head" nameId="3ior.8618885170173601779" value="commons-csv-1.0.jar" />
+            <node concept="28jJK3" id="3q_6UjzOp5k" role="39821P">
+              <node concept="55IIr" id="3q_6UjzOp5l" role="28jJRO">
+                <node concept="2Ry0Ak" id="3q_6UjzOp5m" role="iGT6I">
+                  <property role="2Ry0Am" value="solutions" />
+                  <node concept="2Ry0Ak" id="3q_6UjzOp5n" role="2Ry0An">
+                    <property role="2Ry0Am" value="org.apache.commons" />
+                    <node concept="2Ry0Ak" id="3q_6UjzOp5o" role="2Ry0An">
+                      <property role="2Ry0Am" value="lib" />
+                      <node concept="2Ry0Ak" id="3q_6UjzOp5p" role="2Ry0An">
+                        <property role="2Ry0Am" value="commons-csv-1.0" />
+                        <node concept="2Ry0Ak" id="3q_6UjzOqk8" role="2Ry0An">
+                          <property role="2Ry0Am" value="commons-csv-1.0.jar" />
+                        </node>
                       </node>
                     </node>
                   </node>
@@ -316,6 +235,187 @@
         </node>
       </node>
     </node>
-  </root>
+    <node concept="m$_wf" id="4nVhWYPmNYr" role="3989C9">
+      <property role="m$_wk" value="org.apache.commons" />
+      <node concept="3_J27D" id="4nVhWYPmNYs" role="m$_yQ">
+        <node concept="3Mxwew" id="4nVhWYPmNYt" role="3MwsjC">
+          <property role="3MwjfP" value="org.apache.commons" />
+        </node>
+      </node>
+      <node concept="3_J27D" id="4nVhWYPmNYu" role="m$_w8">
+        <node concept="3Mxwew" id="4nVhWYPmNYv" role="3MwsjC">
+          <property role="3MwjfP" value="1.0" />
+        </node>
+      </node>
+      <node concept="m$f5U" id="4nVhWYPmNYw" role="m$_yh">
+        <ref role="m$f5T" node="4nVhWYPmNYq" resolve="mps-apache-commons" />
+      </node>
+      <node concept="m$_yC" id="4nVhWYPmNYx" role="m$_yJ">
+        <ref role="m$_y1" to="ffeo:4k71ibbKLe8" resolve="jetbrains.mps.core" />
+      </node>
+      <node concept="m$_yC" id="4nVhWYPmVD$" role="m$_yJ">
+        <ref role="m$_y1" to="ffeo:5HVSRHdVm9a" resolve="jetbrains.mps.build" />
+      </node>
+      <node concept="3_J27D" id="4nVhWYPmNYy" role="m_cZH">
+        <node concept="3Mxwew" id="4nVhWYPmNYz" role="3MwsjC">
+          <property role="3MwjfP" value="org.apache.commons" />
+        </node>
+      </node>
+    </node>
+    <node concept="2G$12M" id="4nVhWYPmNYq" role="3989C9">
+      <property role="TrG5h" value="mps-apache-commons" />
+      <node concept="1E1JtA" id="4nVhWYPmVv2" role="2G$12L">
+        <property role="BnDLt" value="true" />
+        <property role="TrG5h" value="mps-apache-commons.build" />
+        <property role="3LESm3" value="9d8ad609-a15a-4817-b9ae-ec9cbb0c2c49" />
+        <property role="2GAjPV" value="false" />
+        <node concept="55IIr" id="4nVhWYPmVv5" role="3LF7KH">
+          <node concept="2Ry0Ak" id="4nVhWYPmVwx" role="iGT6I">
+            <property role="2Ry0Am" value="solutions" />
+            <node concept="2Ry0Ak" id="4nVhWYPmVyF" role="2Ry0An">
+              <property role="2Ry0Am" value="mps-apache-commons.build" />
+              <node concept="2Ry0Ak" id="4nVhWYPmVzL" role="2Ry0An">
+                <property role="2Ry0Am" value="mps-apache-commons.build.msd" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="1SiIV0" id="4nVhWYPmV$Q" role="3bR37C">
+          <node concept="3bR9La" id="4nVhWYPmV$R" role="1SiIV1">
+            <property role="3bR36h" value="false" />
+            <ref role="3bR37D" to="ffeo:78GwwOvB3tw" resolve="jetbrains.mps.ide.build" />
+          </node>
+        </node>
+      </node>
+      <node concept="1E1JtA" id="4nVhWYPmNYp" role="2G$12L">
+        <property role="BnDLt" value="true" />
+        <property role="TrG5h" value="org.apache.commons" />
+        <property role="3LESm3" value="b0f8641f-bd77-4421-8425-30d9088a82f7" />
+        <property role="2GAjPV" value="false" />
+        <node concept="55IIr" id="4nVhWYPmNYk" role="3LF7KH">
+          <node concept="2Ry0Ak" id="4nVhWYPmNYl" role="iGT6I">
+            <property role="2Ry0Am" value="solutions" />
+            <node concept="2Ry0Ak" id="4nVhWYPmNYm" role="2Ry0An">
+              <property role="2Ry0Am" value="org.apache.commons" />
+              <node concept="2Ry0Ak" id="4nVhWYPmNYn" role="2Ry0An">
+                <property role="2Ry0Am" value="org.apache.commons.msd" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="1SiIV0" id="4nVhWYPmNYR" role="3bR37C">
+          <node concept="1BurEX" id="4nVhWYPmNYS" role="1SiIV1">
+            <node concept="55IIr" id="4nVhWYPmNYL" role="1BurEY">
+              <node concept="2Ry0Ak" id="4nVhWYPmNYM" role="iGT6I">
+                <property role="2Ry0Am" value="solutions" />
+                <node concept="2Ry0Ak" id="4nVhWYPmNYN" role="2Ry0An">
+                  <property role="2Ry0Am" value="org.apache.commons" />
+                  <node concept="2Ry0Ak" id="4nVhWYPmNYO" role="2Ry0An">
+                    <property role="2Ry0Am" value="lib" />
+                    <node concept="2Ry0Ak" id="4nVhWYPmNYP" role="2Ry0An">
+                      <property role="2Ry0Am" value="commons-io-2.4" />
+                      <node concept="2Ry0Ak" id="4nVhWYPmNYQ" role="2Ry0An">
+                        <property role="2Ry0Am" value="commons-io-2.4.jar" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="1SiIV0" id="4nVhWYPmNYZ" role="3bR37C">
+          <node concept="1BurEX" id="4nVhWYPmNZ0" role="1SiIV1">
+            <node concept="55IIr" id="4nVhWYPmNYT" role="1BurEY">
+              <node concept="2Ry0Ak" id="4nVhWYPmNYU" role="iGT6I">
+                <property role="2Ry0Am" value="solutions" />
+                <node concept="2Ry0Ak" id="4nVhWYPmNYV" role="2Ry0An">
+                  <property role="2Ry0Am" value="org.apache.commons" />
+                  <node concept="2Ry0Ak" id="4nVhWYPmNYW" role="2Ry0An">
+                    <property role="2Ry0Am" value="lib" />
+                    <node concept="2Ry0Ak" id="4nVhWYPmNYX" role="2Ry0An">
+                      <property role="2Ry0Am" value="commons-lang3-3.3.2" />
+                      <node concept="2Ry0Ak" id="4nVhWYPmNYY" role="2Ry0An">
+                        <property role="2Ry0Am" value="commons-lang3-3.3.2.jar" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="1SiIV0" id="4nVhWYPmNZ7" role="3bR37C">
+          <node concept="1BurEX" id="4nVhWYPmNZ8" role="1SiIV1">
+            <node concept="55IIr" id="4nVhWYPmNZ1" role="1BurEY">
+              <node concept="2Ry0Ak" id="4nVhWYPmNZ2" role="iGT6I">
+                <property role="2Ry0Am" value="solutions" />
+                <node concept="2Ry0Ak" id="4nVhWYPmNZ3" role="2Ry0An">
+                  <property role="2Ry0Am" value="org.apache.commons" />
+                  <node concept="2Ry0Ak" id="4nVhWYPmNZ4" role="2Ry0An">
+                    <property role="2Ry0Am" value="lib" />
+                    <node concept="2Ry0Ak" id="4nVhWYPmNZ5" role="2Ry0An">
+                      <property role="2Ry0Am" value="commons-math3-3.3" />
+                      <node concept="2Ry0Ak" id="4nVhWYPmNZ6" role="2Ry0An">
+                        <property role="2Ry0Am" value="commons-math3-3.3.jar" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="1SiIV0" id="4nVhWYPmNZf" role="3bR37C">
+          <node concept="1BurEX" id="4nVhWYPmNZg" role="1SiIV1">
+            <node concept="55IIr" id="4nVhWYPmNZ9" role="1BurEY">
+              <node concept="2Ry0Ak" id="4nVhWYPmNZa" role="iGT6I">
+                <property role="2Ry0Am" value="solutions" />
+                <node concept="2Ry0Ak" id="4nVhWYPmNZb" role="2Ry0An">
+                  <property role="2Ry0Am" value="org.apache.commons" />
+                  <node concept="2Ry0Ak" id="4nVhWYPmNZc" role="2Ry0An">
+                    <property role="2Ry0Am" value="lib" />
+                    <node concept="2Ry0Ak" id="4nVhWYPmNZd" role="2Ry0An">
+                      <property role="2Ry0Am" value="commons-primitives-1.0" />
+                      <node concept="2Ry0Ak" id="4nVhWYPmNZe" role="2Ry0An">
+                        <property role="2Ry0Am" value="commons-primitives-1.0.jar" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="1SiIV0" id="4nVhWYPpEil" role="3bR37C">
+          <node concept="3bR9La" id="4nVhWYPpEim" role="1SiIV1">
+            <property role="3bR36h" value="false" />
+            <ref role="3bR37D" to="ffeo:mXGwHwhVPj" resolve="JDK" />
+          </node>
+        </node>
+        <node concept="1SiIV0" id="3q_6UjzOp0e" role="3bR37C">
+          <node concept="1BurEX" id="3q_6UjzOp0f" role="1SiIV1">
+            <node concept="55IIr" id="3q_6UjzOp08" role="1BurEY">
+              <node concept="2Ry0Ak" id="3q_6UjzOp09" role="iGT6I">
+                <property role="2Ry0Am" value="solutions" />
+                <node concept="2Ry0Ak" id="3q_6UjzOp0a" role="2Ry0An">
+                  <property role="2Ry0Am" value="org.apache.commons" />
+                  <node concept="2Ry0Ak" id="3q_6UjzOp0b" role="2Ry0An">
+                    <property role="2Ry0Am" value="lib" />
+                    <node concept="2Ry0Ak" id="3q_6UjzOp0c" role="2Ry0An">
+                      <property role="2Ry0Am" value="commons-csv-1.0" />
+                      <node concept="2Ry0Ak" id="3q_6UjzOp0d" role="2Ry0An">
+                        <property role="2Ry0Am" value="commons-csv-1.0.jar" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 
